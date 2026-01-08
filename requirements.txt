@@ -1,0 +1,7 @@
+asgiref==3.11.0
+Django==6.0.1
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+psycopg2-binary==2.9.11
+sqlparse==0.5.5
+tzdata==2025.3

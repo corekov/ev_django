@@ -1,0 +1,60 @@
+{% extends "base.jinja" %}
+{% from "macros.jinja" import render_table %}
+
+{% block content %}
+
+{{ render_table(
+    "Штаты",
+    ["ID", "Название"],
+    states
+) }}
+
+{{ render_table(
+    "Округа",
+    ["ID", "ID штата","Название"],
+    countries
+) }}
+
+{{ render_table(
+    "Города",
+    ["ID", "Название", "Почтовый код"],
+    cities
+) }}
+
+{{ render_table(
+    "Автомобили",
+    ["VIN", "Год", "Запас хода", "Законодательный округ", "ID города", "ID модели", "ID EV Type", "ID cafv"],
+    vehicles
+) }}
+
+{{ render_table(
+    "Модели",
+    ["ID", "ID Бренда", "Название модели"],
+    models
+) }}
+
+{{ render_table(
+    "Бренды",
+    ["ID", "Название бренда"],
+    makers
+) }}
+
+{{ render_table(
+    "Типы электромобилей",
+    ["ID", "Название типа"],
+    ev_types
+) }}
+
+{{ render_table(
+    "Соответствие требованиям CAFV",
+    ["ID", "Статус"],
+    CAFV_Eligibilitys
+) }}
+
+<h2>Статистика</h2>
+<ul>
+    <li>Всего автомобилей: {{ vehicle_count }}</li>
+    <li>Средний запас хода: {{ avg_range }}</li>
+</ul>
+
+{% endblock %}

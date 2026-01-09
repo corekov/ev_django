@@ -1,0 +1,28 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<h2>Округа</h2>
+
+<a href="{{ url('county_add') }}"><button>Добавить округ</button></a>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Округ</th>
+        <th>Штат</th>
+        <th>Действия</th>
+    </tr>
+
+    {% for county in counties %}
+    <tr>
+        <td>{{ county.id }}</td>
+        <td>{{ county.name }}</td>
+        <td>{{ county.state.name }}</td>
+        <td>
+            <a href="{{ url('county_edit', pk=county.id) }}"><button>Изменить</button></a>
+            <a href="{{ url('county_delete', pk=county.id) }}"><button>Удалить</button></a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

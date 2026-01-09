@@ -1,0 +1,19 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<h2>Навигация</h2>
+
+<ul>
+    <li>
+        <a href="{{ url('index') }}">
+            Просмотр всех таблиц
+        </a>
+    </li>
+
+    <li>
+        <a href="{{ url('county_list') }}">
+            Управление округами
+        </a>
+    </li>
+</ul>
+{% endblock %}
